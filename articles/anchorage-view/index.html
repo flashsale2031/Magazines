@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Anchorage View — ten reported stories about the decisions, pressures, and possibilities shaping Anchorage in September 2026." />
+  <meta name="theme-color" content="#10283b" />
+  <title>Anchorage View — The city at the edge of change</title>
+  <style>
+    :root {
+      --ink: #172431;
+      --muted: #5f6c76;
+      --navy: #10283b;
+      --blue: #2f6f8f;
+      --ice: #e8f1f4;
+      --gold: #c58b37;
+      --paper: #fbfaf7;
+      --line: #dbe2e5;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--serif); line-height: 1.72; }
+    a { color: inherit; }
+    .sitebar { background: var(--navy); color: #fff; font-family: var(--sans); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    .sitebar-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; gap: 1rem; padding: .72rem 1.25rem; }
+    .sitebar a { text-decoration: none; opacity: .9; }
+    .masthead { max-width: 1180px; margin: auto; padding: 1.7rem 1.25rem 1.2rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; border-bottom: 1px solid var(--line); }
+    .brand { font-family: var(--sans); font-weight: 900; letter-spacing: -.075em; font-size: clamp(2.6rem, 6vw, 5.8rem); line-height: .78; color: var(--navy); }
+    .brand span { color: var(--gold); }
+    .issue { text-align: right; font-family: var(--sans); color: var(--muted); font-size: .8rem; line-height: 1.4; }
+    .hero { max-width: 1180px; margin: 0 auto; padding: 3.8rem 1.25rem 0; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(280px, .98fr); align-items: end; gap: 3.5rem; }
+    .eyebrow, .kicker { font-family: var(--sans); color: var(--gold); font-size: .77rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { font-size: clamp(3rem, 7vw, 7.4rem); line-height: .93; letter-spacing: -.055em; margin: .9rem 0 1.15rem; max-width: 780px; }
+    .dek { max-width: 650px; color: #40515d; font-size: clamp(1.1rem, 1.8vw, 1.45rem); line-height: 1.45; margin: 0; }
+    .byline { display: flex; flex-wrap: wrap; gap: .65rem 1.3rem; margin-top: 2rem; color: var(--muted); font-family: var(--sans); font-size: .8rem; }
+    .hero-visual { position: relative; }
+    .hero-visual img { width: 100%; display: block; aspect-ratio: 2 / 3; object-fit: cover; box-shadow: 18px 18px 0 var(--ice); }
+    .photo-credit { color: var(--muted); font: .68rem/1.4 var(--sans); margin-top: .65rem; }
+    .rule { max-width: 1180px; margin: 4.5rem auto 0; border-top: 4px solid var(--navy); }
+    .layout { max-width: 1180px; margin: 0 auto; padding: 2.8rem 1.25rem 5rem; display: grid; grid-template-columns: 240px minmax(0, 760px); gap: 4.5rem; align-items: start; }
+    .toc { position: sticky; top: 1rem; font-family: var(--sans); }
+    .toc-title { font-size: .72rem; font-weight: 800; color: var(--gold); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1rem; }
+    .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; border-top: 1px solid var(--line); }
+    .toc a { display: block; padding: .7rem 0; color: var(--muted); text-decoration: none; font-size: .8rem; line-height: 1.3; }
+    .toc a::before { content: counter(toc, decimal-leading-zero) ' '; color: var(--gold); font-weight: 800; margin-right: .4rem; }
+    .toc a:hover { color: var(--navy); }
+    .intro { font-size: 1.18rem; color: #30424e; border-left: 4px solid var(--gold); padding-left: 1.25rem; margin-bottom: 3.5rem; }
+    .story { padding: 3rem 0 3.8rem; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
+    .story:first-of-type { border-top: 0; padding-top: 0; }
+    .story h2 { font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.02; letter-spacing: -.04em; margin: .55rem 0 .8rem; }
+    .story h3 { font-weight: 400; color: #4f606b; font-size: 1.15rem; line-height: 1.35; margin: 0 0 1.5rem; }
+    .story p { font-size: 1.08rem; margin: 0 0 1.15rem; }
+    .story p:first-of-type::first-letter { float: left; font-size: 4.5rem; line-height: .8; padding: .18rem .55rem 0 0; color: var(--blue); }
+    .story strong { color: var(--navy); }
+    .pullquote { margin: 2rem 0; padding: 1.5rem 1.6rem; background: var(--ice); border-top: 1px solid #c9dde5; border-bottom: 1px solid #c9dde5; color: var(--navy); font-size: 1.4rem; line-height: 1.35; }
+    .why { margin-top: 1.6rem; padding: .9rem 1.1rem; background: #fff; border: 1px solid var(--line); font-family: var(--sans); font-size: .87rem; line-height: 1.5; }
+    .why strong { color: var(--gold); text-transform: uppercase; letter-spacing: .08em; font-size: .7rem; margin-right: .35rem; }
+    .snapshot { margin: 1.5rem 0 3rem; padding: 1.2rem; background: var(--navy); color: #fff; }
+    .snapshot h2 { margin: 0 0 .7rem; font: 800 1.15rem/1.2 var(--sans); letter-spacing: .03em; }
+    .snapshot table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: .83rem; }
+    .snapshot th, .snapshot td { text-align: left; vertical-align: top; padding: .65rem .35rem; border-top: 1px solid rgba(255,255,255,.22); }
+    .snapshot th { width: 27%; color: #f1c276; font-weight: 800; }
+    .editor-note { background: #f1eee7; padding: 2rem; margin-top: 1rem; }
+    .editor-note h2 { margin-top: 0; font-size: 1.9rem; }
+    .references { margin-top: 4rem; padding-top: 2rem; border-top: 4px solid var(--navy); }
+    .references h2 { font-size: 2rem; margin-top: 0; }
+    .references ol { padding-left: 1.2rem; }
+    .references li { margin-bottom: .65rem; font-family: var(--sans); font-size: .82rem; line-height: 1.45; color: var(--muted); }
+    .references a { color: var(--blue); }
+    footer { background: var(--navy); color: #dce8ed; padding: 2.5rem 1.25rem; font-family: var(--sans); font-size: .78rem; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    @media (max-width: 820px) {
+      .hero-grid, .layout { grid-template-columns: 1fr; }
+      .layout { gap: 2rem; }
+      .toc { position: static; order: -1; background: var(--ice); padding: 1rem; }
+      .toc ol { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 1rem; }
+      .toc li:nth-child(-n+2) { border-top: 0; }
+      .hero-visual { max-width: 500px; }
+    }
+    @media (max-width: 560px) {
+      .sitebar-inner, .masthead { align-items: flex-start; flex-direction: column; }
+      .issue { text-align: left; }
+      .hero { padding-top: 2.5rem; }
+      .toc ol { grid-template-columns: 1fr; }
+      .toc li:first-child { border-top: 0; }
+      .story p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sitebar"><div class="sitebar-inner"><a href="#top">Anchorage View</a><span>September 2026 · Issue 01</span></div></div>
+  <header class="masthead" id="top">
+    <div class="brand">ANCHORAGE<span>VIEW</span></div>
+    <div class="issue">THE CITY AT THE EDGE OF CHANGE<br />Ten reported stories from Anchorage</div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Special report · Anchorage, Alaska</div>
+          <h1 id="page-title">The city at the edge of change</h1>
+          <p class="dek">Ten reported stories about the decisions, pressures, and possibilities shaping Anchorage now—from a difficult budget cycle to new housing, military investment, and the everyday work of keeping a city connected.</p>
+          <div class="byline"><span>By <strong>Anchorage View staff</strong></span><span>September 2026</span><span>Reading time: 12 minutes</span></div>
+        </div>
+        <figure class="hero-visual">
+          <img src="anchorage_view_cover.jpg" alt="Downtown Anchorage beneath the Chugach Mountains in autumn light" />
+          <figcaption class="photo-credit">Cover image prepared for Anchorage View. The image is editorial artwork and does not depict a specific date or event.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <div class="rule"></div>
+
+    <div class="layout">
+      <aside class="toc" aria-label="Table of contents">
+        <div class="toc-title">In this report</div>
+        <ol>
+          <li><a href="#budget">A hard budget conversation begins</a></li>
+          <li><a href="#jber">JBER’s proposed build-out</a></li>
+          <li><a href="#homelessness">The camps are smaller</a></li>
+          <li><a href="#stormwater">Anchorage’s water problem</a></li>
+          <li><a href="#standoff">A fatal police shooting</a></li>
+          <li><a href="#zoning">The next fight over growth</a></li>
+          <li><a href="#schools">A new school year</a></li>
+          <li><a href="#trails">A trail connection</a></li>
+          <li><a href="#election">Vote centers and access</a></li>
+          <li><a href="#garden">A native garden takes root</a></li>
+        </ol>
+      </aside>
+
+      <article>
+        <p class="intro">Anchorage is often described through its extremes: distance, weather, military importance, and outdoor grandeur. The stories below point toward a quieter definition of the city—a set of systems under negotiation, from budgets and pipes to shelters, classrooms, trails, zoning codes, and public spaces.</p>
+
+        <section class="story" id="budget">
+          <div class="kicker">01 · City Hall</div>
+          <h2>A hard budget conversation begins</h2>
+          <h3>Anchorage’s 2027 planning cycle opens with stable-looking revenue, rising costs, and fewer easy choices.</h3>
+          <p>Anchorage’s next budget season began with a warning that sounded less like a forecast than a boundary line: the city may be able to hold revenue relatively steady, but it cannot keep every promise at the same scale. Mayor Suzanne LaFrance’s Sept. 2 preliminary budget memo starts the formal 2027 process, while municipal officials acknowledge that the size of any deficit is not yet known. <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+          <p>The early numbers point to pressure rather than collapse. The municipality’s memo projects a $3 million decrease in non-property-tax revenues subject to the tax limit and roughly $7.8 million less in other revenues than the amount budgeted for 2026. Officials emphasize that these are preliminary figures and that final calculations will arrive with the proposed budget. <a href="#ref-1">[1]</a></p>
+          <p>That distinction matters because Anchorage’s budget is being pulled in several directions at once. The administration says it wants to continue investing in public safety, housing, behavioral-health response, neighborhood revitalization, and aging infrastructure. The Assembly, meanwhile, has asked for realistic expectations about services and for a focus on projects that prevent catastrophic failures rather than add new maintenance obligations. <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+          <p>The timeline is now part of the story. The Assembly is scheduled to hold a work session on the 120-day memo on Sept. 18, with a draft budget due Oct. 2. The decisions that follow will translate abstract projections into the things residents notice first: road work, public safety capacity, schools, parks, housing programs, and the price of keeping the city functioning.</p>
+          <div class="why"><strong>Why it matters</strong> Anchorage’s fiscal debate is becoming a debate about priorities under constraint—not merely about finding a single missing pot of money.</div>
+        </section>
+
+        <section class="story" id="jber">
+          <div class="kicker">02 · Growth</div>
+          <h2>JBER’s proposed build-out arrives with a housing question</h2>
+          <h3>A potential $7 billion military construction program could bring jobs, buildings, and thousands of new neighbors.</h3>
+          <p>The biggest economic story on Anchorage’s horizon may be unfolding behind the gates of Joint Base Elmendorf-Richardson. Reporting from the Anchorage Daily News describes a “Fightertown Recapitalization” program that could channel nearly $7 billion into new or modernized facilities over several years. Construction could begin as soon as summer 2027, although the federal authorization process is not complete. <a href="#ref-3">[3]</a></p>
+          <p>The proposed work includes hangars, dormitories, warehouses, airfield improvements, training infrastructure, utility extensions, and other mission facilities. A Senate committee version of the fiscal 2027 defense bill included about $2.066 billion for the JBER program, while Air Force budget documents described a longer-term total of approximately $6.964 billion. <a href="#ref-3">[3]</a></p>
+          <p>For Anchorage, the opportunity is both direct and indirect. New construction would mean contracts, subcontracting, and demand for services. Military projections also point to roughly 2,500 additional personnel associated with the recapitalization effort. That creates a second question, one that cannot be solved with a ribbon-cutting: where will those workers and families live? <a href="#ref-1">[1]</a> <a href="#ref-3">[3]</a></p>
+          <p>The city’s own budget memo frames the program as an economic opportunity and a housing challenge. Anchorage is already trying to accelerate the production of 10,000 homes in 10 years, while construction costs and limited inventory make large-scale growth difficult. If the military investment arrives on schedule, the city will be asked to expand capacity quickly without overextending its infrastructure. <a href="#ref-1">[1]</a></p>
+          <div class="why"><strong>Why it matters</strong> JBER’s expansion could strengthen Anchorage’s economy, but its success will be measured partly by whether the city can absorb growth without making housing and public-service pressures worse.</div>
+        </section>
+
+        <section class="story" id="homelessness">
+          <div class="kicker">03 · Housing</div>
+          <h2>The camps are smaller; the challenge is not</h2>
+          <h3>Anchorage reports progress on visible homelessness while shelter capacity and street-level need remain unresolved.</h3>
+          <p>Anchorage’s homelessness story has changed shape. A federally mandated point-in-time survey recorded a 28% drop in the number of people living outside, and the city says the large, entrenched camps that once occupied prominent parks and trail corridors have receded. <a href="#ref-4">[4]</a></p>
+          <p>But a smaller footprint is not the same as a solved problem. The Anchorage Daily News reported that smaller camps remain, often farther from view and deeper in the woods. City officials say the municipality had about 300 shelter beds available for the summer, down from roughly 450 during winter, and that demand still exceeds supply. <a href="#ref-4">[4]</a></p>
+          <p>The numbers also carry definitions that deserve attention. The city’s count of outdoor deaths, for example, excludes several categories of death, including homicides and deaths that occur in hospitals. Officials maintain that the same criteria have been used, while critics question whether the metrics fully capture what is happening beyond the most visible camps. <a href="#ref-4">[4]</a></p>
+          <p>The result is a complicated civic picture. Clearing camps can reduce hazards and restore access to public spaces. Shelter can create a safer bridge to treatment and housing. Yet when people move from large camps into smaller, less visible places, the underlying causes—housing costs, behavioral-health crises, addiction, disability, and a shortage of supportive options—do not move with them.</p>
+          <div class="why"><strong>Why it matters</strong> Anchorage may be making measurable progress on unsheltered homelessness, but the city still has to prove that visibility has not simply been replaced by dispersal.</div>
+        </section>
+
+        <section class="story" id="stormwater">
+          <div class="kicker">04 · Infrastructure</div>
+          <h2>Anchorage’s billion-dollar water problem</h2>
+          <h3>Stormwater is not an abstract utility issue when it becomes a sinkhole, a flooded home, or a broken road.</h3>
+          <p>Anchorage’s stormwater system is old, fragmented, and expensive to repair. A May briefing to the Anchorage Assembly put the municipality’s unaddressed stormwater-related liability at roughly $1.3 billion. The city has about 590 miles of storm pipes, and more than 400 miles—about 68%—were described as being in a state of collapse. <a href="#ref-5">[5]</a></p>
+          <p>In Anchorage, “stormwater” includes more than rain. Snowmelt and runoff descend from the Chugach Mountains through a city built across a network of watersheds. When pipes, culverts, and drainage structures fail, the consequences can show up as flooded property, polluted waterways, deteriorating pavement, or emergency repairs that cost more than preventive maintenance would have. <a href="#ref-5">[5]</a></p>
+          <p>The city’s institutional problem is as important as the engineering problem. No single existing utility or government entity has clear responsibility for the entire stormwater system. Roads, subsurface drainage, and water infrastructure can fall under different jurisdictions, leaving gaps where routine inspection and maintenance should be. <a href="#ref-5">[5]</a></p>
+          <p>A stormwater utility has been proposed before. An advisory commission paused its work in 2021 and resumed meeting in 2026. The debate ahead will involve rates, service boundaries, public accountability, and the basic question of whether Anchorage is willing to pay steadily for maintenance rather than pay episodically for failure.</p>
+          <div class="pullquote">“We’ll fix it one year but we’re there three years later fixing it again.” <small>— municipal staff briefing to the Assembly, as reported by ADN <a href="#ref-5">[5]</a></small></div>
+          <div class="why"><strong>Why it matters</strong> Water is one of the most ordinary forces in Anchorage—and one of the costliest when the city has no durable system for managing it.</div>
+        </section>
+
+        <section class="story" id="standoff">
+          <div class="kicker">05 · Public safety</div>
+          <h2>A standoff ends with a fatal police shooting</h2>
+          <h3>Officials say more information will follow as Anchorage examines a deadly confrontation at a downtown housing facility.</h3>
+          <p>A standoff at the Adelaide, a housing facility for formerly homeless residents, ended Aug. 18 with an Anchorage police officer shooting and killing a woman, according to Alaska Public Media’s account of a police briefing. Police Chief Sean Case said the woman had pointed a gun at staff and officers and had threatened suicide. <a href="#ref-6">[6]</a></p>
+          <p>Case said police spent more than an hour attempting to negotiate. The response included the department’s Mobile Intervention Team, SWAT officers, crisis negotiators, a drone, and officers positioned outside the third-floor unit. He said the fatal shot was fired by one officer, who had not yet been interviewed when the chief gave his preliminary account. <a href="#ref-6">[6]</a></p>
+          <p>The incident unfolded near an elementary school shortly before the start of the school year, adding a layer of public concern to a confrontation already involving a housing facility and a behavioral-health crisis. Police said the woman was pronounced dead at the scene. Her name and the officer’s name were not publicly released in the report. <a href="#ref-6">[6]</a></p>
+          <p>The case will turn on what investigators learn about the sequence of decisions, the perceived threat, the available alternatives, and the review process that follows. A preliminary account is not a final finding. That distinction is essential in any fatal use-of-force case, especially one involving crisis response and a resident population that already lives at the intersection of housing instability, trauma, and public safety.</p>
+          <div class="why"><strong>Why it matters</strong> The shooting will test Anchorage’s crisis-response system and the public’s ability to evaluate police action before the full investigative record is available.</div>
+        </section>
+
+        <section class="story" id="zoning">
+          <div class="kicker">06 · Neighborhoods</div>
+          <h2>The next fight over how Anchorage grows</h2>
+          <h3>A revised zoning proposal seeks more housing near transit while neighborhood groups ask for more time and more detail.</h3>
+          <p>Anchorage’s long-running argument over density has a new name. The Assembly proposal once known as the Transit Supportive Development Overlay was recast as the <strong>Missing Middle Housing Opportunity overlay</strong>, or MMHOP. Sponsors planned to introduce the seventh version in June and hold a public hearing in September. <a href="#ref-7">[7]</a></p>
+          <p>The concept is straightforward even if the politics are not: make it easier to build duplexes, small multifamily buildings, and other “missing middle” forms of housing near transit and in areas identified for growth. Supporters say the current rezone process can take at least a year, involve extensive paperwork and public hearings, and make modest projects financially unworkable. <a href="#ref-7">[7]</a></p>
+          <p>Opponents and skeptical community councils have not rejected the goal of more housing outright. Their concerns focus on the details: building height, sunlight, parking, traffic, neighborhood character, and whether residents have had a meaningful chance to respond as the proposal changes. <a href="#ref-7">[7]</a></p>
+          <p>The policy is therefore a test of process as much as land use. Anchorage needs more homes, particularly for working families, young professionals, elders, and people who want to remain in their neighborhoods. It also needs public rules that are clear enough to earn trust. A city cannot build its way out of a housing shortage if every project begins with uncertainty about what the rules mean.</p>
+          <div class="why"><strong>Why it matters</strong> MMHOP asks Anchorage to choose between preserving a familiar pattern of low-density neighborhoods and making room for a broader range of homes close to services and transit.</div>
+        </section>
+
+        <section class="story" id="schools">
+          <div class="kicker">07 · Education</div>
+          <h2>A new school year, under familiar pressure</h2>
+          <h3>Anchorage students returned to classrooms in August as the district and city continued navigating funding and calendar questions.</h3>
+          <p>The 2026–27 school year brought the most visible sign of continuity a city can offer: students returning to Anchorage classrooms. Alaska’s News Source reported that students in grades 1 through 12 entered schools on Aug. 20, beginning another year across a district serving a large and diverse municipality. <a href="#ref-8">[8]</a></p>
+          <p>Behind the opening-day photographs is a more complicated public-finance story. Anchorage’s 2027 budget memo says the municipality intends to fund the maximum voluntary contribution allowed for the Anchorage School District, but the eventual amount depends on state law, district figures, and the city’s own revenue outlook. <a href="#ref-1">[1]</a></p>
+          <p>The memo estimates that the required local contribution could be about $138 million for the next school year, while the maximum voluntary contribution may be around $108 million—figures that officials say can change as the state Legislature, the district, and the municipality complete their respective budget processes. <a href="#ref-1">[1]</a></p>
+          <p>For families, school funding debates are not merely fiscal. They can shape staffing, programs, transportation, building maintenance, and the stability of the school calendar. The year begins with students in their seats; the larger question is whether the institutions around them can provide a predictable foundation.</p>
+          <div class="why"><strong>Why it matters</strong> Anchorage’s school-year story is also a story about the limits of local control when education funding is shaped by municipal revenue, state policy, and district needs at the same time.</div>
+        </section>
+
+        <section class="story" id="trails">
+          <div class="kicker">08 · Mobility</div>
+          <h2>A trail connection links downtown to a bigger vision</h2>
+          <h3>A long-sought Coastal–Ship Creek link would close a gap in Anchorage’s trail network and extend a signature loop.</h3>
+          <p>Anchorage is moving ahead with a long-sought connection between the Coastal and Ship Creek trails, according to reporting by the Anchorage Daily News. The project would extend the paved route known locally as the 32-mile “Moose Loop” and create a stronger link between downtown and the future Alaska Long Trail. <a href="#ref-9">[9]</a></p>
+          <p>Trail projects are often described as recreation investments, but their civic value is broader. A connected route can support commuting, tourism, exercise, neighborhood access, and the kind of low-cost mobility that does not depend on a car. In a city where geography can make short trips feel surprisingly disconnected, a missing segment can have an outsized effect.</p>
+          <p>The project also fits a larger Anchorage question: how should growth be experienced at street level? New military investment, housing construction, and neighborhood redevelopment will add pressure to roads and parking. A trail connection cannot solve that alone, but it can give residents another way to reach work, the waterfront, parks, and one another.</p>
+          <p>The link’s importance will be measured in daily use rather than in its opening ceremony. If downtown workers, families, visitors, and cyclists can move through the city with fewer breaks in the network, Anchorage will have gained more than a trail segment—it will have gained a piece of connective tissue.</p>
+          <div class="why"><strong>Why it matters</strong> In a city built around distance, a short piece of infrastructure can change how people understand the whole place.</div>
+        </section>
+
+        <section class="story" id="election">
+          <div class="kicker">09 · Civic life</div>
+          <h2>Vote centers turn access into a local issue</h2>
+          <h3>Anchorage’s municipal election brought attention to where, when, and how residents cast a ballot.</h3>
+          <p>Ahead of Anchorage’s April 7 municipal election, vote centers opened with weekday hours and a Saturday schedule, according to the Anchorage Daily News. The arrangement put election access in practical terms: a resident’s ability to vote can depend on location, work schedule, transportation, and whether the process feels understandable. <a href="#ref-10">[10]</a></p>
+          <p>Municipal elections may attract less national attention than state or federal contests, but their effects are immediate. Anchorage voters choose leaders who influence zoning, roads, public safety, education contributions, parks, housing policy, and the city’s tax-and-service balance. The ballot is local; the consequences are visible in everyday life.</p>
+          <p>The value of vote centers is not only convenience. They can also serve as public infrastructure for trust when voters know where to go, when the sites are open, and what identification or ballot process to expect. Clear information becomes especially important in a city where residents may live far from downtown or work hours that do not fit a traditional election-day schedule.</p>
+          <p>As Anchorage continues to debate how much government can do—and how much residents are willing to pay for—participation becomes part of the policy story. Access is not a guarantee of turnout, but it is one of the conditions that makes turnout possible.</p>
+          <div class="why"><strong>Why it matters</strong> Local democracy is built out of ordinary logistics. A vote center is a building, a schedule, and a reminder that civic power needs a route to reach people.</div>
+        </section>
+
+        <section class="story" id="garden">
+          <div class="kicker">10 · Community</div>
+          <h2>A native garden takes root on Government Hill</h2>
+          <h3>Volunteers’ work at Susan Nightingale McKay Park offers a small-scale picture of community resilience.</h3>
+          <p>On Aug. 27, dozens of volunteers gathered at Susan Nightingale McKay Park in Government Hill to plant an edible native garden, according to Alaska’s News Source. The project is modest beside Anchorage’s billion-dollar infrastructure debates and multi-year construction proposals, but its meaning is local and tangible. <a href="#ref-11">[11]</a></p>
+          <p>A community garden can turn a public space into a place of participation. It asks residents to contribute time, learn what grows in the region, and think about a park as something cultivated rather than merely maintained. An edible native garden also connects food, ecology, and neighborhood identity in a way that a conventional beautification project may not.</p>
+          <p>The timing is notable. Anchorage is entering a period of intense discussion about growth, public services, housing, and the future of its neighborhoods. Large systems will shape the city, but smaller projects can determine whether residents feel they have a role within those systems. A garden is not a substitute for a shelter bed, a repaired storm pipe, or a funded classroom. It is a different kind of civic work.</p>
+          <p>The most durable local stories often begin this way: with people showing up, improving a shared space, and making a place easier to recognize as their own.</p>
+          <div class="why"><strong>Why it matters</strong> Community resilience is not only an emergency response. It is also the slow practice of creating places where people can belong.</div>
+        </section>
+
+        <section class="snapshot">
+          <h2>Anchorage View at a glance</h2>
+          <table>
+            <tr><th>Fiscal capacity</th><td>The 2027 budget cycle begins with projected revenue pressure and rising service expectations.</td></tr>
+            <tr><th>Growth</th><td>JBER investment could bring major construction and new residents, increasing the need for housing.</td></tr>
+            <tr><th>Housing</th><td>Visible camping has declined, but shelter capacity and underlying causes remain unresolved.</td></tr>
+            <tr><th>Infrastructure</th><td>Stormwater failures represent a roughly $1.3 billion liability and expose gaps in maintenance responsibility.</td></tr>
+            <tr><th>Civic life</th><td>Schools, trails, vote centers, and gardens show how city policy becomes daily experience.</td></tr>
+          </table>
+        </section>
+
+        <section class="editor-note">
+          <h2>Editor’s note</h2>
+          <p>Anchorage is often described through its extremes: distance, weather, military importance, and outdoor grandeur. The stories in this issue point toward a quieter definition of the city. Anchorage is also a set of systems under negotiation—budgets, pipes, shelters, classrooms, trails, zoning codes, and public spaces. Each system is local enough to touch directly and large enough to outlast a single news cycle.</p>
+          <p>The city’s next chapter will not be written by one project or one election. It will be built through a sequence of choices about what to maintain, what to expand, what to measure, and who gets heard before the decision is final.</p>
+          <p><strong>— Manus AI</strong></p>
+        </section>
+
+        <section class="references" id="references">
+          <h2>References</h2>
+          <ol>
+            <li id="ref-1"><a href="https://www.muni.org/Departments/budget/operatingBudget/2027%20GGOB/2027%20120%20Day%20Memo%20Signed%20by%20the%20Mayor.pdf">Municipality of Anchorage, “2027 Preliminary Data – 120 Day Memo,” Sept. 2, 2026.</a></li>
+            <li id="ref-2"><a href="https://www.adn.com/alaska-news/anchorage/2026/09/05/anchorage-city-leaders-prepare-for-tough-choices-during-upcoming-budget-cycle/">Anchorage Daily News, “Anchorage city leaders prepare for ‘tough choices’ during upcoming budget cycle,” Sept. 5, 2026.</a></li>
+            <li id="ref-3"><a href="https://www.adn.com/alaska-news/military/2026/08/16/jber-could-see-7b-in-the-coming-years-money-officials-think-could-boost-anchorages-economy/">Anchorage Daily News, “JBER could see $7B in the coming years, money officials think could boost Anchorage’s economy,” Aug. 16, 2026.</a></li>
+            <li id="ref-4"><a href="https://www.adn.com/alaska-news/anchorage/2026/06/06/hiding-better-a-complicated-reality-as-anchorage-says-its-making-progress-on-persistent-homelessness/">Anchorage Daily News, “‘Hiding better’: A complicated reality as Anchorage says it’s making progress on persistent homelessness,” June 6, 2026.</a></li>
+            <li id="ref-5"><a href="https://www.adn.com/alaska-news/anchorage/2026/05/24/anchorage-assembly-gets-preview-of-13b-infrastructure-liability-that-keeps-worsening/">Anchorage Daily News, “Anchorage Assembly gets preview of $1.3B infrastructure liability that keeps worsening,” May 24, 2026.</a></li>
+            <li id="ref-6"><a href="https://alaskapublic.org/news/public-safety/2026-08-18/woman-dead-after-anchorage-police-officer-fires-single-shot-in-standoff-police-chief-says">Alaska Public Media, “Woman dead after Anchorage police officer fires single shot in standoff, police chief says,” Aug. 18, 2026.</a></li>
+            <li id="ref-7"><a href="https://www.adn.com/alaska-news/anchorage/2026/06/02/anchorage-assembly-resurrects-zoning-policy-under-new-name-with-changes/">Anchorage Daily News, “Anchorage Assembly resurrects zoning policy under new name, with changes,” June 2, 2026.</a></li>
+            <li id="ref-8"><a href="https://www.alaskasnewssource.com/2026/08/20/lot-energy-students-1st12th-grade-enter-anchorage-school-district-classrooms/">Alaska’s News Source, “‘A lot of energy’: Students 1st–12th grade enter Anchorage School District classrooms,” Aug. 20, 2026.</a></li>
+            <li id="ref-9"><a href="https://www.adn.com/alaska-news/anchorage/2026/05/13/anchorage-will-build-long-sought-link-between-coastal-and-ship-creek-trails/">Anchorage Daily News, “Anchorage will build long-sought link between Coastal and Ship Creek trails,” May 13, 2026.</a></li>
+            <li id="ref-10"><a href="https://www.adn.com/alaska-news/anchorage/2026/03/30/anchorage-vote-centers-open-tuesday-for-april-7-municipal-election/">Anchorage Daily News, “Anchorage vote centers open Tuesday for April 7 municipal election,” Mar. 30, 2026.</a></li>
+            <li id="ref-11"><a href="https://www.alaskasnewssource.com/2026/08/27/volunteers-plant-native-garden-anchorage-park/">Alaska’s News Source, “Volunteers plant native garden at Anchorage park,” Aug. 27, 2026.</a></li>
+          </ol>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer><div class="footer-inner"><span><strong>ANCHORAGE VIEW</strong> · An original editorial compilation by Manus AI</span><span><a href="#top">Back to top ↑</a></span></div></footer>
+</body>
+</html>
